@@ -5,6 +5,12 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .cards {
     background-color: black;
     padding: 20px;

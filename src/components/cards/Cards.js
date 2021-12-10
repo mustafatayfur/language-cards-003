@@ -4,8 +4,9 @@ import { categories } from "../../helpers/Data";
 const Cards = () => {
   return (
     
-    <div className="card-container">
-    
+    <div className="container">
+      <h1>Languages</h1>
+      <div className="card-container">
       {categories.map((card, index) => {
         return (
           <div className="cards" key={index}>
@@ -17,6 +18,7 @@ const Cards = () => {
           </div>
         );
       })}
+      </div>
     </div>
   );
 };
