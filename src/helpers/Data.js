@@ -7,6 +7,7 @@ import php from "../assets/php.png";
 import javascript from "../assets/javascript.png";
 import html from "../assets/html.png";
 
+console.log(css);
 export const categories = [
   {
     name: "javascript",
