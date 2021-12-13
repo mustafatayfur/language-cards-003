@@ -4,12 +4,7 @@ import { useState } from "react"
 // console.log(categories);
 
 const Cards = () => {
-  // const handleClick = (e)=>{
-  //   e.preventDefault();
-  const [isVisible, setIsvisible] = useState(true);
-
-    
-
+  
   
   return (
     
