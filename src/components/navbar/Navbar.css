@@ -2,12 +2,14 @@
     /* background-color: #171B20; */
     display: flex;
     justify-content: center;
+    margin: 30px;
    
   }
 
   .navbar img{
-    height: 10%;
-    width: 10%;
+    height: 30%;
+    width: 30%;
+    padding: 30px;
 
   }
   /* .navbar a {
