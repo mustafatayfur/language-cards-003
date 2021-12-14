@@ -3,23 +3,19 @@ import { categories } from "../../helpers/Data";
 import { useState } from "react"
 // console.log(categories);
 
-const Cards = () => {
+const Cards = ({toggleShow, setIsvisible, isVisible}) => {
   // const handleClick = (e)=>{
-  //   e.preventDefault();
-  const [isVisible, setIsvisible] = useState(false);
+  //   console.log("Click with handleClick from Header");
   
   return (
     
     <div className="container">
       <h1>Languages</h1>
-      <div className="card-container">
+      <div className="card-container" >
         {categories.map((card, index) => {
           return (
-          <div className="cards" key={index} >
-            
-             
-               
-               <div onClick={()=>setIsvisible(!isVisible)}>
+          <div className="cards" key={index} onClick={()=>setIsvisible(!isVisible)} >
+   
                   {
                     isVisible 
                       ? 
@@ -28,11 +24,10 @@ const Cards = () => {
                       <p>{card.name}</p> 
                     </div>
                     :
-                    <div>
+                    <div >
                       <p>{card.options} </p>
                     </div>
                   }
-                </div>
           </div>
           );
         })}
@@ -41,5 +36,3 @@ const Cards = () => {
   );
 };
 export default Cards;
-
-
