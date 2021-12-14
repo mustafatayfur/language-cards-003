@@ -6,7 +6,7 @@ import { useState } from "react"
 const Cards = () => {
   // const handleClick = (e)=>{
   //   e.preventDefault();
-  const [isVisible, setIsvisible] = useState(true);
+  const [isVisible, setIsvisible] = useState(false);
   
   return (
     
@@ -15,15 +15,19 @@ const Cards = () => {
       <div className="card-container">
       {categories.map((card, index) => {
         return (
-          <div className="cards" key={index}>
-            <img src={card.img} alt=""/>
-            <p>{card.name}</p>
-           
+          <div className="cards" key={index} onClick={()=>setIsvisible(!isVisible)}>
+            
              {
-               isVisible && <div className="card-over">
-
-               <p> {card.options}</p>
-             </div>
+               isVisible 
+               ? 
+               <div>
+                  <img src={card.img} alt=""/>
+                  <p>{card.name}</p> 
+               </div>
+                :
+               <div className="card-over">
+                  <p>{card.options} </p>
+                </div>
              }
             
           </div>
@@ -34,30 +38,5 @@ const Cards = () => {
   );
 };
 export default Cards;
-// <div key={name} className="card" onClick={() => setIsvisible(!isVisible)}>
-//         {isVisible ? (
-//           <Frontcard name={name} img={img} />
-//         ) : (
-//           <Info options={options} />
-//         )}
-//       </div>
 
-// const [isVisible, setIsvisible] = useState(true);
 
-// function Info({ options }) {
-//   return (
-//     <ul className="info">
-//       {card.map((item, index) => (
-//         <li key={index}>{item}</li>
-//       ))}
-//     </ul>
-//   );
-// }
-// function Frontcard({ img, name }) {
-//   return (
-//     <div>
-//       <img src={img} alt="" />
-//       <h4>{name}</h4>
-//     </div>
-//   );
-// }
