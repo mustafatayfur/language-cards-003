@@ -1,7 +1,9 @@
 import "./Cards.css";
 import { categories } from "../../helpers/Data";
 import { useState } from "react"
+import Card from "../card/Card";
 // console.log(categories);
+
 
 const Cards = ({toggleShow, setIsvisible, isVisible}) => {
   // const handleClick = (e)=>{
@@ -11,28 +13,15 @@ const Cards = ({toggleShow, setIsvisible, isVisible}) => {
     
     <div className="container">
       <h1>Languages</h1>
-      <div className="card-container" >
-        {categories.map((card, index) => {
-          return (
-          <div className="cards" key={index} onClick={()=>setIsvisible(!isVisible)} >
-   
-                  {
-                    isVisible 
-                      ? 
-                    <div>
-                      <img src={card.img} alt=""/>
-                      <p>{card.name}</p> 
-                    </div>
-                    :
-                    <div >
-                      <p>{card.options} </p>
-                    </div>
-                  }
-          </div>
-          );
-        })}
-      </div>
+      <Card 
+        toggleShow={toggleShow}
+        isVisible = {isVisible}
+        categories = {categories}
+      />
+       
     </div>
   );
 };
 export default Cards;
+
+// onClick={()=>setIsvisible(!isVisible)}
