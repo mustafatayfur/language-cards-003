@@ -13,26 +13,29 @@ const Cards = () => {
     <div className="container">
       <h1>Languages</h1>
       <div className="card-container">
-      {categories.map((card, index) => {
-        return (
-          <div className="cards" key={index} onClick={()=>setIsvisible(!isVisible)}>
+        {categories.map((card, index) => {
+          return (
+          <div className="cards" key={index} >
             
-             {
-               isVisible 
-               ? 
-               <div>
-                  <img src={card.img} alt=""/>
-                  <p>{card.name}</p> 
-               </div>
-                :
-               <div className="card-over">
-                  <p>{card.options} </p>
+             
+               
+               <div onClick={()=>setIsvisible(!isVisible)}>
+                  {
+                    isVisible 
+                      ? 
+                    <div>
+                      <img src={card.img} alt=""/>
+                      <p>{card.name}</p> 
+                    </div>
+                    :
+                    <div>
+                      <p>{card.options} </p>
+                    </div>
+                  }
                 </div>
-             }
-            
           </div>
-        );
-      })}
+          );
+        })}
       </div>
     </div>
   );
