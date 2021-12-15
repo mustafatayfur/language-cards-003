@@ -1,45 +1,21 @@
-import React from 'react'
+/** @format */
 
-const Card = ({toggleShow, isVisible, categories}) => {
-    return (
-        <div className="card-container" >
-        {categories.map((card, index) => {
-          return (
-          <div className="cards" key={index} onClick={toggleShow}>
-                {
-                    isVisible 
-                      ? 
-                    <div>
-                        <img src={categories.img} alt=""/>
-                        <p>{categories.name}</p> 
-                    </div>
-                        :
-                    <div >
-                        <p>{categories.options} </p>
-                    </div>
-                }
-    
-                  
-          </div>
-          );
-        })}
+import React, { useState } from "react";
+import Frontcard from "./Frontcard";
+import Info from "./Info";
+
+export default function Card({ name, img, options }) {
+  const [isVisible, setIsvisible] = useState(true);
+  return (
+    <>
+      <div key={name} className='card' onClick={() => setIsvisible(!isVisible)}>
+        {isVisible ? (
+          <Frontcard name={name} img={img} />
+        ) : (
+          <Info options={options} />
+        )}
       </div>
-    )
+    </>
+  );
 }
 
-export default Card;
-
-// <div onClick={toggleShow}>
-//         {
-//             isVisible 
-//               ? 
-//             <div>
-//               <img src={categories.img} alt=""/>
-//               <p>{categories.name}</p> 
-//             </div>
-//             :
-//             <div >
-//               <p>{categories.options} </p>
-//             </div>
-//           }
-//         </div>

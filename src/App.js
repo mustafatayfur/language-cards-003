@@ -1,20 +1,22 @@
-/** @format */
-
-import Cards from "./components/cards/Cards";
+import React from "react";
+import Card from "./components/card/Card";
+import Data from "./components/card/Data";
 import "./App.css";
-import Navbar from "./components/navbar/Navbar";
-import { useState } from "react";
-
 function App() {
-  const [isVisible, setIsVisible] = useState(false);
-  const toggleShow = () => setIsVisible(!isVisible);
-
   return (
-    <div className='App'>
-      <Navbar />
-      <Cards isVisible={isVisible} toggleShow={toggleShow} />
+    <div className="App">
+      <img
+        src="/static/media/react.7b78f5c3.svg"
+        alt="logo"
+        id="logo"
+      ></img>
+      <h2>Languages</h2>
+      <div className="container">
+        {Data.map((card) => (
+          <Card key={card.name} {...card} />
+        ))}
+      </div>
     </div>
   );
 }
-
 export default App;

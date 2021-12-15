@@ -1,14 +1,12 @@
-import css from "../assets/css.png";
-import python from "../assets/python.png";
-import java from "../assets/java.png";
-import cpp from "../assets/cpp.png";
-import go from "../assets/go.png";
-import php from "../assets/php.png";
-import javascript from "../assets/javascript.png";
-import html from "../assets/html.png";
-
-console.log(css);
-export const categories = [
+import css from "../../assets/css.png";
+import python from "../../assets/python.png";
+import java from "../../assets/java.png";
+import cpp from "../../assets/cpp.png";
+import go from "../../assets/go.png";
+import php from "../../assets/php.png";
+import javascript from "../../assets/javascript.png";
+import html from "../../assets/html.png";
+const Data = [
   {
     name: "javascript",
     img: javascript,
@@ -47,6 +45,7 @@ export const categories = [
   {
     name: "php",
     img: php,
-    options: ["BackEnd", "1995", "	Rasmus Lerdorf"],
+    options: ["BackEnd", "1995", "  Rasmus Lerdorf"],
   },
 ];
+export default Data;
